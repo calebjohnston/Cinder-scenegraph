@@ -16,12 +16,13 @@
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995581B128DF400A5C623 /* IOKit.framework */; };
 		00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
+		3C7869C325D5C50A00D43E83 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C7869B425D5C32300D43E83 /* Node.cpp */; };
+		3C7869C525D5C7D000D43E83 /* Node2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C7869B325D5C32300D43E83 /* Node2d.cpp */; };
+		3C7869C725D5C7D300D43E83 /* Node3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C7869B225D5C32300D43E83 /* Node3d.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		1DA800AE1B804CC881ACD99E /* scenegraph_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 91086125A7FC47DEB9EEE299 /* scenegraph_Prefix.pch */; };
-		5FA2E7FBD645444FB1BEA99B /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 421C4FB3AED84FA6AD4AE444 /* CinderApp.icns */; };
-		EBF1C5CDC4AA44F6BAB94F58 /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = A91E539975CE497C910F71D3 /* Resources.h */; };
 		5AE9097F01B84E8A9D9EF6B8 /* scenegraphApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 113620FB72F94628B6FA34B2 /* scenegraphApp.cpp */; };
+		5FA2E7FBD645444FB1BEA99B /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 421C4FB3AED84FA6AD4AE444 /* CinderApp.icns */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,15 +36,25 @@
 		00B995581B128DF400A5C623 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		00B995591B128DF400A5C623 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		113620FB72F94628B6FA34B2 /* scenegraphApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = scenegraphApp.cpp; path = ../src/scenegraphApp.cpp; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		3C7869AD25D5C31600D43E83 /* NodeShape2d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NodeShape2d.h; path = ../include/NodeShape2d.h; sourceTree = "<group>"; };
+		3C7869AE25D5C31600D43E83 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Node.h; path = ../include/Node.h; sourceTree = "<group>"; };
+		3C7869AF25D5C31700D43E83 /* Node3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Node3d.h; path = ../include/Node3d.h; sourceTree = "<group>"; };
+		3C7869B025D5C31700D43E83 /* Node2d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Node2d.h; path = ../include/Node2d.h; sourceTree = "<group>"; };
+		3C7869B125D5C31700D43E83 /* NodeMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NodeMesh.h; path = ../include/NodeMesh.h; sourceTree = "<group>"; };
+		3C7869B225D5C32300D43E83 /* Node3d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Node3d.cpp; path = ../src/Node3d.cpp; sourceTree = "<group>"; };
+		3C7869B325D5C32300D43E83 /* Node2d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Node2d.cpp; path = ../src/Node2d.cpp; sourceTree = "<group>"; };
+		3C7869B425D5C32300D43E83 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Node.cpp; path = ../src/Node.cpp; sourceTree = "<group>"; };
+		3C7869B525D5C32400D43E83 /* NodeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NodeMesh.cpp; path = ../src/NodeMesh.cpp; sourceTree = "<group>"; };
+		3C7869B625D5C32400D43E83 /* NodeShape2d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NodeShape2d.cpp; path = ../src/NodeShape2d.cpp; sourceTree = "<group>"; };
+		421C4FB3AED84FA6AD4AE444 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		569FD8A5E78C47E6854B8C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* scenegraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scenegraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		113620FB72F94628B6FA34B2 /* scenegraphApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/scenegraphApp.cpp; sourceTree = "<group>"; name = scenegraphApp.cpp; };
-		A91E539975CE497C910F71D3 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
-		421C4FB3AED84FA6AD4AE444 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
-		569FD8A5E78C47E6854B8C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
-		91086125A7FC47DEB9EEE299 /* scenegraph_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = scenegraph_Prefix.pch; sourceTree = "<group>"; name = scenegraph_Prefix.pch; };
+		91086125A7FC47DEB9EEE299 /* scenegraph_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = scenegraph_Prefix.pch; sourceTree = "<group>"; };
+		A91E539975CE497C910F71D3 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +79,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01B97315FEAEA392516A2CEA /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3C7869B425D5C32300D43E83 /* Node.cpp */,
+				3C7869B325D5C32300D43E83 /* Node2d.cpp */,
+				3C7869B225D5C32300D43E83 /* Node3d.cpp */,
+				3C7869B525D5C32400D43E83 /* NodeMesh.cpp */,
+				3C7869B625D5C32400D43E83 /* NodeShape2d.cpp */,
 				113620FB72F94628B6FA34B2 /* scenegraphApp.cpp */,
 			);
 			name = Source;
@@ -124,16 +147,14 @@
 			name = scenegraph;
 			sourceTree = "<group>";
 		};
-		01B97315FEAEA392516A2CEA /* Blocks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Blocks;
-			sourceTree = "<group>";
-		};
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				3C7869AE25D5C31600D43E83 /* Node.h */,
+				3C7869B025D5C31700D43E83 /* Node2d.h */,
+				3C7869AF25D5C31700D43E83 /* Node3d.h */,
+				3C7869B125D5C31700D43E83 /* NodeMesh.h */,
+				3C7869AD25D5C31600D43E83 /* NodeShape2d.h */,
 				A91E539975CE497C910F71D3 /* Resources.h */,
 				91086125A7FC47DEB9EEE299 /* scenegraph_Prefix.pch */,
 			);
@@ -184,6 +205,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "scenegraph" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -220,6 +243,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE9097F01B84E8A9D9EF6B8 /* scenegraphApp.cpp in Sources */,
+				3C7869C325D5C50A00D43E83 /* Node.cpp in Sources */,
+				3C7869C725D5C7D300D43E83 /* Node3d.cpp in Sources */,
+				3C7869C525D5C7D000D43E83 /* Node2d.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,17 +256,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = scenegraph_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = scenegraph_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -262,12 +288,12 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = scenegraph_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NDEBUG=1",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = scenegraph_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -284,14 +310,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = "../../Cinder";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CINDER_PATH = ../../Cinder;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				ENABLE_TESTABILITY = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include";
@@ -302,13 +328,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = "../../Cinder";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CINDER_PATH = ../../Cinder;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include";
 			};

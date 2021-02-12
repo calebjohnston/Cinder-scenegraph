@@ -2,6 +2,8 @@
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 
+#include "Node.h"
+
 using namespace ci;
 using namespace ci::app;
 using namespace std;
@@ -12,6 +14,8 @@ class scenegraphApp : public App {
 	void mouseDown( MouseEvent event ) override;
 	void update() override;
 	void draw() override;
+	
+	cg::Node* mNode;
 };
 
 void scenegraphApp::setup()
