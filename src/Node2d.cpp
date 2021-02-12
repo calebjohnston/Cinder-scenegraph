@@ -8,9 +8,9 @@
 
 #include "Node2d.h"
 
-using namespace cg;
 using namespace ci;
 using namespace std;
+using namespace scene;
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -24,7 +24,7 @@ Node2dRef Node2d::create(const std::string& name, const bool active)
 }
 
 Node2d::Node2d(const std::string& name, const bool active)
-:	Node(name, active), mSize(0), mPosition(0),
+:	NodeBase(name, active), mSize(0), mPosition(0),
 	mScale(1), mPivot(0), mTransform(1),
 	mWorldTransform(1), mRotation(0)
 {
@@ -267,7 +267,7 @@ bool Node2d::sortBySize(const NodeRef& lhs, const NodeRef& rhs)
 
 #pragma mark auxiliary functions
 
-namespace cg {
+namespace scene {
 	
 	//--------------------------------
 	void alignHorizontally(Node2d& object, const float x, HorizontalAlignment_t type)

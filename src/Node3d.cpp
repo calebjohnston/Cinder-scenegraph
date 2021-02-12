@@ -8,9 +8,9 @@
 
 #include "Node3d.h"
 
-using namespace cg;
 using namespace ci;
 using namespace std;
+using namespace scene;
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -24,7 +24,7 @@ Node3dRef Node3d::create(const std::string& name, const bool active)
 }
 
 Node3d::Node3d(const std::string& name, const bool active)
-:	Node(name, active), mSize(0), mPosition(0),
+:	NodeBase(name, active), mSize(0), mPosition(0),
 	mScale(1), mPivot(0), mTransform(1),
 	mWorldTransform(1), mRotation()
 {

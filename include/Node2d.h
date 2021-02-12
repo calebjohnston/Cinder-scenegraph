@@ -14,12 +14,11 @@
 #include "glm/gtc/matrix_access.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
-#include "Node.h"
+#include "NodeBase.h"
 
-namespace cg {
+namespace scene {
 
 class Node2d;
-
 typedef std::shared_ptr<Node2d> Node2dRef;				//!< A shared pointer to a Node2d instance
 typedef std::shared_ptr<const Node2d> Node2dConstRef;	//!< A shared pointer to a constant Node2d instance
 typedef std::weak_ptr<Node2d> Node2dWeakRef;			//!< A weak pointer to a Node2d instance
@@ -29,9 +28,9 @@ typedef std::weak_ptr<Node2d> Node2dWeakRef;			//!< A weak pointer to a Node2d i
  * 
  * The Node2d defines all coordinates in 2d and computes all transformations using an affine matrix
  *
- * @see cg::NodeShape2d
+ * @see scene::NodeShape2d
  */
-class Node2d : public cg::Node {
+class Node2d : public NodeBase {
 public:
 	/** creates Node2d instance wrapped by STL shared pointer */
 	static Node2dRef create(const std::string& name = "", const bool active = true);
@@ -81,6 +80,8 @@ public:
 	//! assigns the 2d pivot point (or centroid) for the node using two floats
 	void		setPivot(const float x, const float y) { mPivot = ci::vec2(x,y); mTransformIsDirty = true; }
 	
+	//! assigns the 2d size of the node
+	virtual void		setSize(const ci::vec2& size) { mSize = size; };
 	//! returns the 2d size of the node (and it's contents --??)
 	virtual ci::vec2	getSize() const { return mSize; };
 	//! returns the rectangular boundary of the node (and it's contents --??)

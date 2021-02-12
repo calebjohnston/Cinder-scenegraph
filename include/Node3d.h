@@ -15,9 +15,9 @@
 #include "glm/gtc/matrix_access.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
-#include "Node.h"
+#include "NodeBase.h"
 
-namespace cg {
+namespace scene {
 
 class Node3d;
 
@@ -28,10 +28,10 @@ typedef std::weak_ptr<Node3d> Node3dWeakRef;			//!< A weak pointer to a Node3d i
 /**
  * @brief Node3d is the base class for any scene graph which only contains 3D data
  *
- * @see cg::Node
- * @see cg::NodeMesh
+ * @see scene::Node
+ * @see scene::NodeMesh
  */
-class Node3d : public cg::Node {
+class Node3d : public scene::NodeBase {
 public:
 	/** creates Node2d instance wrapped by STL shared pointer */
 	static Node3dRef create(const std::string& name = "", const bool active = true);

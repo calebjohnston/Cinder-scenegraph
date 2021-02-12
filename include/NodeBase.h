@@ -9,36 +9,33 @@
 #include "cinder/app/App.h"
 #include "cinder/AxisAlignedBox.h"
 
-namespace cg {
+#include "SceneObject.h"
 
-typedef std::shared_ptr<class Node> NodeRef;		//!< A shared pointer to a Node2d instance
-typedef std::shared_ptr<const Node> NodeConstRef;	//!< A shared pointer to a constant Node2d instance
-typedef std::weak_ptr<Node> NodeWeakRef;			//!< A weak pointer to a Node2d instance
-typedef std::deque<NodeRef> NodeDeque;				//!< A deque of shared pointers to Node2d instances
+namespace scene {
+
+class NodeBase;
+typedef std::shared_ptr<NodeBase> NodeRef;				//!< A shared pointer to a Node2d instance
+typedef std::shared_ptr<const NodeBase> NodeConstRef;	//!< A shared pointer to a constant Node2d instance
+typedef std::weak_ptr<NodeBase> NodeWeakRef;			//!< A weak pointer to a Node2d instance
+typedef std::deque<NodeRef> NodeDeque;					//!< A deque of shared pointers to Node2d instances
 
 /**
  * @brief Abstract base class for all scene graph entities
  *
- * Node abstract base class. It supports a hierarchical scene graph
+ * NodeBase abstract base class. It supports a hierarchical scene graph
  * system for coordinate transformations and rendering. Each concrete
  * node type can be parsed from an input XML node. Each node type 
  * can also be serialized to an XML node.
- *
- * Each node type will have a unique string identifier and a coordinate
- * transformation encoded as a 4x4 matrix.
- *
- * @see cg::Node2d
- * @see cg::Node3d
  */
-class Node : public std::enable_shared_from_this<Node> {
+class NodeBase : public scene::SceneObject {
 public:
 	/**
 	 * Virtual destructor destroys children
 	 */
-	virtual ~Node();
+	virtual ~NodeBase();
 	
 	//! returns true if this node has a parent assigned, false otherwise
-	bool hasParent() const { return mParent.lock().get() != NULL; }
+	bool hasParent() const { return mParent.lock().get() != nullptr; }
 	
 	//! sets the node's parent node (using weak reference to avoid objects not getting destroyed)
 	void setParent(NodeRef node);
@@ -99,10 +96,10 @@ public:
 	void moveToTop(NodeRef node);
 	
 	//! returns wether a specific child is on top of all other children
-	bool isOnTop(const NodeRef node) const;
+	bool isOnTop(NodeConstRef node) const;
 	
 	//! returns wether a specific child is beneath all other children
-	bool isOnBottom(const NodeRef node) const;
+	bool isOnBottom(NodeConstRef node) const;
 	
 	//! puts a specific child below all other children of this node
 	void moveToBottom(NodeRef node);
@@ -129,9 +126,6 @@ public:
 	//! returns wether this node is active
 	virtual bool isActive() const { return mIsActive; }
 
-	//! returns the transformation matrix of this node
-	const std::string& getName() const { return mName; }
-
 	//! calls the setup() function of this node and all its decendants
 	virtual void deepSetup();
 	//! calls the update() function of this node and all its decendants
@@ -154,10 +148,9 @@ protected:
 	 * @param active flag used to determine if the node will be active upon instantiation
 	 * @param interactive flag used to determine if the node will accept and transmit mouse and key events
 	 */
-	Node(const std::string& name = "", const bool active = true);
+	NodeBase(const std::string& name = "", const bool active = true);
 	
 	bool			mIsActive;		//!< visibility flag when drawing the node
-	std::string		mName;			//!< The string name used to identify the node
 	NodeWeakRef		mParent;		//!< std::weak_ptr<class Node> parent
 	NodeDeque		mChildren;		//!< std::deque<std::shared_ptr<class Node> > children
 
@@ -261,18 +254,18 @@ public:
 	typedef Iterator<NodeConstRef> ConstIter;	//!< The const iterator type declaration
 	
 	//! Returns an iterator. Defaults to depth first
-	Iter getIter(const bool depth_first = true) { return Iter(shared_from_this(), depth_first); }
+	Iter getIter(const bool depth_first = true) { return Iter(shared_from_base<NodeBase>(), depth_first); }
 	//! Returns a depth first iterator
-	Iter getDepthFirstIter() { return Iter(shared_from_this(), true); }
+	Iter getDepthFirstIter() { return Iter(shared_from_base<NodeBase>(), true); }
 	//! Returns a breadth first iterator
-	Iter getBreadthFirstIter() { return Iter(shared_from_this(), false); }
+	Iter getBreadthFirstIter() { return Iter(shared_from_base<NodeBase>(), false); }
 	
 	//! Returns a constant iterator. Defaults to depth first
-	ConstIter getConstIter(const bool depth_first = true) const { return ConstIter(shared_from_this(), depth_first); }
+	ConstIter getConstIter(const bool depth_first = true) const { return ConstIter(shared_from_base<NodeBase>(), depth_first); }
 	//! Returns a depth first constant iterator
-	ConstIter getDepthFirstConstIter() const { return ConstIter(shared_from_this(), true); }
+	ConstIter getDepthFirstConstIter() const { return ConstIter(shared_from_base<NodeBase>(), true); }
 	//! Returns a breadth first constant iterator
-	ConstIter getBreadthFirstConstIter() const { return ConstIter(shared_from_this(), false); }
+	ConstIter getBreadthFirstConstIter() const { return ConstIter(shared_from_base<NodeBase>(), false); }
 	
 };
 
