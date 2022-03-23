@@ -6,7 +6,7 @@
 using namespace ci;
 using namespace ci::app;
 using namespace std;
-using namespace scene;
+using namespace sg;
 
 ///////////////////////////////////////////////////////////////////////////
 //

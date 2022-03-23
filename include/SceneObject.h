@@ -4,7 +4,7 @@
 #include <iostream>
 #include <memory>
 
-namespace scene {
+namespace sg {
 
 class SceneObject;
 typedef std::shared_ptr<SceneObject> ObjectRef;				//!< A shared pointer to a Component instance

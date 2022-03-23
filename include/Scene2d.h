@@ -16,7 +16,7 @@
 
 #include "NodeBase.h"
 
-namespace sg {
+namespace scene {
 
 class Node2d;
 typedef std::shared_ptr<Node2d> Node2dRef;				//!< A shared pointer to a Node2d instance
@@ -28,7 +28,7 @@ typedef std::weak_ptr<Node2d> Node2dWeakRef;			//!< A weak pointer to a Node2d i
  * 
  * The Node2d defines all coordinates in 2d and computes all transformations using an affine matrix
  *
- * @see sg::NodeShape2d
+ * @see scene::NodeShape2d
  */
 class Node2d : public NodeBase {
 public:

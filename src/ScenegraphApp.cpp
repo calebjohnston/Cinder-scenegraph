@@ -15,7 +15,7 @@ class ScenegraphApp : public App {
 	void update() override;
 	void draw() override;
 	
-	scene::NodeBase* mNode;
+	sg::NodeBase* mNode;
 };
 
 void ScenegraphApp::setup()

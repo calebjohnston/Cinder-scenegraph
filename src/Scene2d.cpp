@@ -10,7 +10,7 @@
 
 using namespace ci;
 using namespace std;
-using namespace sg;
+using namespace scene;
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -267,7 +267,7 @@ bool Node2d::sortBySize(const NodeRef& lhs, const NodeRef& rhs)
 
 #pragma mark auxiliary functions
 
-namespace sg {
+namespace scene {
 	
 	//--------------------------------
 	void alignHorizontally(Node2d& object, const float x, HorizontalAlignment_t type)

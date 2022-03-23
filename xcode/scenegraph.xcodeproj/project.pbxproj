@@ -16,6 +16,7 @@
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995581B128DF400A5C623 /* IOKit.framework */; };
 		00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
+		3C4258BF25DD967E00FA0828 /* SceneObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C786A0325D71CF600D43E83 /* SceneObject.cpp */; };
 		3C7869C325D5C50A00D43E83 /* NodeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C7869B425D5C32300D43E83 /* NodeBase.cpp */; };
 		3C7869C525D5C7D000D43E83 /* Node2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C7869B325D5C32300D43E83 /* Node2d.cpp */; };
 		3C7869C725D5C7D300D43E83 /* Node3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C7869B225D5C32300D43E83 /* Node3d.cpp */; };
@@ -38,6 +39,8 @@
 		3C7869EC25D6F83100D43E83 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995581B128DF400A5C623 /* IOKit.framework */; };
 		3C7869ED25D6F83100D43E83 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
 		3C786A0425D71CF600D43E83 /* SceneObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C786A0325D71CF600D43E83 /* SceneObject.cpp */; };
+		3C786A0B25D72D2000D43E83 /* TransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C786A0A25D72D2000D43E83 /* TransformComponent.cpp */; };
+		3C786A1225D72EFC00D43E83 /* RectTransformComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C786A1125D72EFC00D43E83 /* RectTransformComponent.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5AE9097F01B84E8A9D9EF6B8 /* ScenegraphApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 113620FB72F94628B6FA34B2 /* ScenegraphApp.cpp */; };
 		5FA2E7FBD645444FB1BEA99B /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 421C4FB3AED84FA6AD4AE444 /* CinderApp.icns */; };
@@ -58,6 +61,8 @@
 		113620FB72F94628B6FA34B2 /* ScenegraphApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ScenegraphApp.cpp; path = ../src/ScenegraphApp.cpp; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		3C4258B825DD6B6900FA0828 /* Signal.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Signal.hpp; path = ../include/Signal.hpp; sourceTree = "<group>"; };
+		3C4258C425DDB20800FA0828 /* Events.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Events.hpp; path = ../include/Events.hpp; sourceTree = "<group>"; };
 		3C7869AD25D5C31600D43E83 /* NodeShape2d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NodeShape2d.h; path = ../include/NodeShape2d.h; sourceTree = "<group>"; };
 		3C7869AE25D5C31600D43E83 /* NodeBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NodeBase.h; path = ../include/NodeBase.h; sourceTree = "<group>"; };
 		3C7869AF25D5C31700D43E83 /* Node3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Node3d.h; path = ../include/Node3d.h; sourceTree = "<group>"; };
@@ -72,11 +77,15 @@
 		3C7869CD25D6D71900D43E83 /* ComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComponentFactory.h; path = ../include/ComponentFactory.h; sourceTree = "<group>"; };
 		3C7869CE25D6D72000D43E83 /* ComponentFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ComponentFactory.cpp; path = ../src/ComponentFactory.cpp; sourceTree = "<group>"; };
 		3C7869D525D6F82B00D43E83 /* ScenegraphTestApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScenegraphTestApp.cpp; path = ../samples/ScenegraphTestApp.cpp; sourceTree = "<group>"; };
-		3C7869F125D6F83200D43E83 /* sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C7869F125D6F83200D43E83 /* sgsample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sgsample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C7869F225D6F83200D43E83 /* scenegraph copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "scenegraph copy-Info.plist"; path = "/Users/Caleb/Development/OpenSource/Cinder/scenegraph/xcode/scenegraph copy-Info.plist"; sourceTree = "<absolute>"; };
 		3C7869FD25D70C7800D43E83 /* SceneObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneObject.h; path = ../include/SceneObject.h; sourceTree = "<group>"; };
 		3C7869FE25D70D3C00D43E83 /* Utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Utils.hpp; path = ../include/Utils.hpp; sourceTree = "<group>"; };
 		3C786A0325D71CF600D43E83 /* SceneObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneObject.cpp; path = ../src/SceneObject.cpp; sourceTree = "<group>"; };
+		3C786A0925D72D1500D43E83 /* TransformComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransformComponent.h; path = ../include/TransformComponent.h; sourceTree = "<group>"; };
+		3C786A0A25D72D2000D43E83 /* TransformComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransformComponent.cpp; path = ../src/TransformComponent.cpp; sourceTree = "<group>"; };
+		3C786A1025D72EF500D43E83 /* RectTransformComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RectTransformComponent.h; path = ../include/RectTransformComponent.h; sourceTree = "<group>"; };
+		3C786A1125D72EFC00D43E83 /* RectTransformComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RectTransformComponent.cpp; path = ../src/RectTransformComponent.cpp; sourceTree = "<group>"; };
 		421C4FB3AED84FA6AD4AE444 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		569FD8A5E78C47E6854B8C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,7 +144,7 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				3C7869CE25D6D72000D43E83 /* ComponentFactory.cpp */,
+				3C786A0F25D72D3100D43E83 /* Components */,
 				3C7869B325D5C32300D43E83 /* Node2d.cpp */,
 				3C7869B225D5C32300D43E83 /* Node3d.cpp */,
 				3C7869B425D5C32300D43E83 /* NodeBase.cpp */,
@@ -178,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* scenegraph.app */,
-				3C7869F125D6F83200D43E83 /* sample.app */,
+				3C7869F125D6F83200D43E83 /* sgsample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,8 +210,9 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				3C7869C925D6D57F00D43E83 /* ComponentBase.hpp */,
-				3C7869CD25D6D71900D43E83 /* ComponentFactory.h */,
+				3C786A0E25D72D2800D43E83 /* Components */,
+				3C4258C425DDB20800FA0828 /* Events.hpp */,
+				3C4258B825DD6B6900FA0828 /* Signal.hpp */,
 				3C7869B025D5C31700D43E83 /* Node2d.h */,
 				3C7869AF25D5C31700D43E83 /* Node3d.h */,
 				3C7869AE25D5C31600D43E83 /* NodeBase.h */,
@@ -242,12 +252,33 @@
 			name = Samples;
 			sourceTree = "<group>";
 		};
+		3C786A0E25D72D2800D43E83 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3C786A1025D72EF500D43E83 /* RectTransformComponent.h */,
+				3C786A0925D72D1500D43E83 /* TransformComponent.h */,
+				3C7869C925D6D57F00D43E83 /* ComponentBase.hpp */,
+				3C7869CD25D6D71900D43E83 /* ComponentFactory.h */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		3C786A0F25D72D3100D43E83 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3C786A1125D72EFC00D43E83 /* RectTransformComponent.cpp */,
+				3C786A0A25D72D2000D43E83 /* TransformComponent.cpp */,
+				3C7869CE25D6D72000D43E83 /* ComponentFactory.cpp */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3C7869D825D6F83100D43E83 /* sample */ = {
+		3C7869D825D6F83100D43E83 /* sgsample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C7869EE25D6F83100D43E83 /* Build configuration list for PBXNativeTarget "sample" */;
+			buildConfigurationList = 3C7869EE25D6F83100D43E83 /* Build configuration list for PBXNativeTarget "sgsample" */;
 			buildPhases = (
 				3C7869D925D6F83100D43E83 /* Resources */,
 				3C7869DB25D6F83100D43E83 /* Sources */,
@@ -257,10 +288,10 @@
 			);
 			dependencies = (
 			);
-			name = sample;
+			name = sgsample;
 			productInstallPath = "$(HOME)/Applications";
 			productName = scenegraph;
-			productReference = 3C7869F125D6F83200D43E83 /* sample.app */;
+			productReference = 3C7869F125D6F83200D43E83 /* sgsample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8D1107260486CEB800E47090 /* scenegraph */ = {
@@ -303,7 +334,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* scenegraph */,
-				3C7869D825D6F83100D43E83 /* sample */,
+				3C7869D825D6F83100D43E83 /* sgsample */,
 			);
 		};
 /* End PBXProject section */
@@ -336,6 +367,7 @@
 				3C7869DE25D6F83100D43E83 /* NodeBase.cpp in Sources */,
 				3C7869DF25D6F83100D43E83 /* Node3d.cpp in Sources */,
 				3C7869E025D6F83100D43E83 /* Node2d.cpp in Sources */,
+				3C4258BF25DD967E00FA0828 /* SceneObject.cpp in Sources */,
 				3C7869E125D6F83100D43E83 /* ScenegraphTestApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +376,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C786A1225D72EFC00D43E83 /* RectTransformComponent.cpp in Sources */,
+				3C786A0B25D72D2000D43E83 /* TransformComponent.cpp in Sources */,
 				3C7869CF25D6D72000D43E83 /* ComponentFactory.cpp in Sources */,
 				3C786A0425D71CF600D43E83 /* SceneObject.cpp in Sources */,
 				5AE9097F01B84E8A9D9EF6B8 /* ScenegraphApp.cpp in Sources */,
@@ -501,7 +535,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3C7869EE25D6F83100D43E83 /* Build configuration list for PBXNativeTarget "sample" */ = {
+		3C7869EE25D6F83100D43E83 /* Build configuration list for PBXNativeTarget "sgsample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3C7869EF25D6F83100D43E83 /* Debug */,

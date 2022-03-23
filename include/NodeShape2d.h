@@ -8,7 +8,7 @@
 
 #include "Node2d.h"
 
-namespace scene {
+namespace sg {
 	
 typedef std::shared_ptr<class NodeShape2d> NodeShape2dRef;		//!< A shared pointer to a NodeShape2d instance
 typedef std::shared_ptr<const NodeShape2d> NodeShape2dConstRef;	//!< A shared pointer to a constant NodeShape2d instance
@@ -17,10 +17,10 @@ typedef std::weak_ptr<NodeShape2d> NodeShape2dWeakRef;			//!< A weak pointer to 
 /**
  * @brief Node2d type that includes a 2d shape object in which to draw
  *
- * @see scene::Node2d
+ * @see sg::Node2d
  * @see ci::Shape2d
  */
-class NodeShape2d : public scene::Node2d {
+class NodeShape2d : public sg::Node2d {
 public:
 	NodeShape2d(const ci::Shape2d& shape = ci::Shape2d(), const std::string& name = "NodeShape2d", const bool active = true);
 	virtual ~NodeShape2d();

@@ -6,7 +6,7 @@
 
 #include "SceneObject.h"
 
-namespace scene {
+namespace sg {
 
 class ComponentBase;
 typedef std::shared_ptr<ComponentBase> ComponentRef;			//!< A shared pointer to a Component instance
@@ -17,7 +17,7 @@ typedef std::weak_ptr<ComponentBase> ComponentWeakRef;			//!< A weak pointer to 
  * @brief Component is an abstract base class for components added to the scenegraph
  *
  */
-class ComponentBase : public scene::SceneObject {
+class ComponentBase : public sg::SceneObject {
 public:
 	virtual ~ComponentBase() {}
 	
@@ -41,7 +41,7 @@ public:
 protected:
 	friend class ComponentFactory;
 	
-	ComponentBase(const std::string& name = "Component") : scene::SceneObject(name) {};
+	ComponentBase(const std::string& name = "Component") : sg::SceneObject(name) {};
 };
 	
 }

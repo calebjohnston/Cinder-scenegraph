@@ -9,9 +9,11 @@
 #include "cinder/app/App.h"
 #include "cinder/AxisAlignedBox.h"
 
+#include "Events.hpp"
 #include "SceneObject.h"
+#include "Signal.hpp"
 
-namespace scene {
+namespace sg {
 
 class NodeBase;
 typedef std::shared_ptr<NodeBase> NodeRef;				//!< A shared pointer to a Node2d instance
@@ -27,7 +29,7 @@ typedef std::deque<NodeRef> NodeDeque;					//!< A deque of shared pointers to No
  * node type can be parsed from an input XML node. Each node type 
  * can also be serialized to an XML node.
  */
-class NodeBase : public scene::SceneObject {
+class NodeBase : public sg::SceneObject {
 public:
 	/**
 	 * Virtual destructor destroys children
@@ -134,11 +136,11 @@ public:
 	virtual void deepDraw() = 0;
 
 	// base class has no impl for standard event loop
-	virtual void setup() { /* no-op */ }
-	virtual void update(double elapsed) { /* no-op */ }
-	virtual void draw() { /* no-op */ }
-	virtual void addedToScene() { /* no-op */ }
-	virtual void removedFromScene() { /* no-op */ }
+	virtual void setup() { /* no-op */ }				// TODO: Migrate to signal
+	virtual void update(double elapsed) { /* no-op */ }	// TODO: Migrate to signal
+	virtual void draw() { /* no-op */ }					// TODO: Factor out
+	virtual void addedToScene() { /* no-op */ }			// TODO: Migrate to signal
+	virtual void removedFromScene() { /* no-op */ }		// TODO: Migrate to signal
 		
 protected:
 	/**
@@ -155,13 +157,20 @@ protected:
 	NodeDeque		mChildren;		//!< std::deque<std::shared_ptr<class Node> > children
 
 	//! function that is called right before drawing this node
-	virtual void pre_draw() {}
+	virtual void pre_draw() {}	// TODO: Factor out
 		
 	//! function that is called right after drawing this node
-	virtual void post_draw() {}
+	virtual void post_draw() {}	// TODO: Factor out
 
 	//! required transform() function to compose the transformation matrix
 	virtual void transform() = 0;
+	
+	sg::Signal<NodeEvent> mPreDrawSignal;			//!< signal invoked right before draw command
+	sg::Signal<NodeEvent> mPostDrawSignal;			//!< signal invoked right after draw command
+	sg::Signal<NodeEvent> mAddedToSceneSignal;		//!< signal invoked right after the node is given a parent
+	sg::Signal<NodeEvent> mRemovedFromSceneSignal;	//!< signal invoked right before the node's parent is removed
+	sg::Signal<NodeEvent> mSetupSignal;				//!< signal invoked upon initialization
+	sg::Signal<NodeEvent> mUpdateSignal;			//!< signal invoked for the update tick
 	
 public:
 	/**

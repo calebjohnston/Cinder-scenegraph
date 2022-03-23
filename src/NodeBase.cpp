@@ -6,7 +6,7 @@
 
 #include "NodeBase.h"
 
-using namespace scene;
+using namespace sg;
 using namespace ci;
 using namespace std;
 

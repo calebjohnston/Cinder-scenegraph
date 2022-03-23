@@ -10,7 +10,7 @@
 
 using namespace ci;
 using namespace std;
-using namespace sg;
+using namespace scene;
 
 ///////////////////////////////////////////////////////////////////////////
 //

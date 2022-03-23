@@ -5,13 +5,13 @@
 #include "Utils.hpp"
 #include "SceneObject.h"
 
-using namespace scene;
+using namespace sg;
 
 uint64_t SceneObject::sNameNum = 0;
 
 SceneObject::SceneObject(const std::string& name)
 {
-	mName = name + "_" + scene::toFormattedString(sNameNum++, 8);
+	mName = name + "_" + sg::toFormattedString(sNameNum++, 8);
 }
 
 SceneObject::~SceneObject()

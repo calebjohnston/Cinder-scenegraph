@@ -5,7 +5,7 @@
 #include <string>
 #include <sstream>
 
-namespace scene {
+namespace sg {
 	
 static uint64_t getHash( const std::string &name )
 {

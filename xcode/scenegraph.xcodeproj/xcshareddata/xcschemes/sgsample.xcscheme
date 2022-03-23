@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3C7869D825D6F83100D43E83"
-               BuildableName = "sample.app"
-               BlueprintName = "sample"
+               BuildableName = "sgsample.app"
+               BlueprintName = "sgsample"
                ReferencedContainer = "container:scenegraph.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3C7869D825D6F83100D43E83"
-            BuildableName = "sample.app"
-            BlueprintName = "sample"
+            BuildableName = "sgsample.app"
+            BlueprintName = "sgsample"
             ReferencedContainer = "container:scenegraph.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3C7869D825D6F83100D43E83"
-            BuildableName = "sample.app"
-            BlueprintName = "sample"
+            BuildableName = "sgsample.app"
+            BlueprintName = "sgsample"
             ReferencedContainer = "container:scenegraph.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

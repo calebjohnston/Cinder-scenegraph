@@ -5,7 +5,7 @@
 using namespace ci;
 using namespace ci::app;
 using namespace std;
-using namespace scene;
+using namespace sg;
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -31,14 +31,14 @@ void ComponentFactory::update(double elapsed)
 	// update all components
 }
 
-ComponentRef ComponentFactory::instantiate(const std::string& name)
-{
-	ComponentRef comp(new ComponentBase(name));
-	
-	mComponents.push_back(comp);
-	
-	return comp;
-}
+//ComponentRef ComponentFactory::create(const std::string& name)
+//{
+//	ComponentRef comp(new ComponentBase(name));
+//
+//	addComponent(comp);
+//
+//	return comp;
+//}
 
 bool ComponentFactory::addComponent(ComponentRef comp)
 {
@@ -60,9 +60,14 @@ bool ComponentFactory::removeComponent(ComponentRef comp)
 
 ComponentRef ComponentFactory::getComponentByName(const std::string& name) const
 {
+	auto match = find_if(begin(mComponents), end(mComponents), [&](ComponentRef c){ return c->getName() == name; });
+	if (match != end(mComponents))
+		return *match;
+	else
+		return ComponentRef();
 }
 
-bool ComponentFactory::clearComponents()
+void ComponentFactory::clearComponents()
 {
 	mComponents.clear();
 }

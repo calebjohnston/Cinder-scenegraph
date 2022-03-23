@@ -6,7 +6,7 @@
 
 #include "ComponentBase.hpp"
 
-namespace scene {
+namespace sg {
 
 class ComponentFactory;
 typedef std::shared_ptr<ComponentFactory> ComponentFactoryRef;				//!< A shared pointer to a ComponentFactory instance
@@ -19,9 +19,9 @@ typedef std::weak_ptr<ComponentFactory> ComponentFactoryWeakRef;			//!< A weak p
  * The only way that components should be created is through a factory class.
  * This allows for simple, centralized management and upkeep for each component type.
  *
- * @see scene::Component
+ * @see sg::Component
  */
-class ComponentFactory : public scene::SceneObject {
+class ComponentFactory : public sg::SceneObject {
 public:
 	ComponentFactory();
 	virtual ~ComponentFactory();
@@ -30,7 +30,7 @@ public:
 	
 	virtual void update( double elapsed );
 	
-	ComponentRef instantiate(const std::string& name);
+//	ComponentRef create(const std::string& name);
 	
 	static ComponentFactoryWeakRef get()
 	{
@@ -40,11 +40,13 @@ public:
 		return sInstance;
 	}
 	
+	virtual ComponentRef create(const std::string& name) { return ComponentRef(); }
+	
 protected:
 	bool addComponent(ComponentRef comp);
 	bool removeComponent(ComponentRef comp);
 	ComponentRef getComponentByName(const std::string& name) const;
-	bool clearComponents();
+	void clearComponents();
 	
 private:
 	static ComponentFactoryRef sInstance;

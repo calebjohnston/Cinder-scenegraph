@@ -9,7 +9,7 @@
 
 #include "Node3d.h"
 
-namespace scene {
+namespace sg {
 
 typedef std::shared_ptr<class NodeMesh> NodeMeshRef;		//!< A shared pointer to a Node3d instance
 typedef std::shared_ptr<const NodeMesh> NodeMeshConstRef;	//!< A shared pointer to a constant Node3d instance
@@ -18,10 +18,10 @@ typedef std::weak_ptr<NodeMesh> NodeMeshWeakRef;			//!< A weak pointer to a Node
 /**
  * @brief Node3d type that includes a TriMesh object
  *
- * @see scene::Node3d
+ * @see sg::Node3d
  * @see ci::TriMesh
  */
-class NodeMesh : public scene::Node3d {
+class NodeMesh : public sg::Node3d {
 public:
 	NodeMesh(const ci::TriMesh& mesh = ci::TriMesh(), const std::string& name = "NodeMesh", const bool active = true);
 	virtual ~NodeMesh();
